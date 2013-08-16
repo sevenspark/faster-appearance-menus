@@ -19,7 +19,7 @@ function fam_swap_core_script(){
 	if( is_admin() ){
 		wp_deregister_script( 'nav-menu' );
 		wp_register_script( 'nav-menu', FAST_AM_URL . 'nav-menu.js' , array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-droppable', 'wp-lists', 'postbox' ), false , 'faster-0.1' );
-		wp_enqueue_script( 'nav-menu' );
+		//wp_enqueue_script( 'nav-menu' );	//don't queue - only load on pages when it will be queued anyway
 
 		
 		did_action( 'init' ) && wp_localize_script( 'nav-menu', 'navMenuL10n', array(
