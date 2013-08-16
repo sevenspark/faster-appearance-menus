@@ -377,31 +377,34 @@ var wpNavMenu;
 			api.refreshAdvancedAccessibility();
 
 			//Setup the refresh on hover/focus/touch event
-			$( '#menu-management' ).on( 'hover.refreshAccessibility focus.refreshAccessibility touchstart.refreshAccessibility' , '.menu-item' , function(){
+			$( '#menu-management' ).on( 'mouseenter.refreshAccessibility focus.refreshAccessibility touchstart.refreshAccessibility' , '.menu-item' , function(){
 				api.refreshAdvancedAccessibilityLazy( $( this ).find( '.item-edit' ) );
 			});
+
+			//Modified events to use on() with event delegation so that newly added menu items work as well
 			
 			// Events
-			$( '.menus-move-up' ).on( 'click', function ( e ) {
+			$( '#menu-management' ).on( 'click', '.menus-move-up' , function ( e ) {
 				api.moveMenuItem( $( this ).parents( 'li.menu-item' ).find( 'a.item-edit' ), 'up' );
 				e.preventDefault();
 			});
-			$( '.menus-move-down' ).on( 'click', function ( e ) {
+			$( '#menu-management' ).on( 'click', '.menus-move-down', function ( e ) {
 				api.moveMenuItem( $( this ).parents( 'li.menu-item' ).find( 'a.item-edit' ), 'down' );
 				e.preventDefault();
 			});
-			$( '.menus-move-top' ).on( 'click', function ( e ) {
+			$( '#menu-management' ).on( 'click', '.menus-move-top', function ( e ) {
 				api.moveMenuItem( $( this ).parents( 'li.menu-item' ).find( 'a.item-edit' ), 'top' );
 				e.preventDefault();
 			});
-			$( '.menus-move-left' ).on( 'click', function ( e ) {
+			$( '#menu-management' ).on( 'click', '.menus-move-left' , function ( e ) {
 				api.moveMenuItem( $( this ).parents( 'li.menu-item' ).find( 'a.item-edit' ), 'left' );
 				e.preventDefault();
 			});
-			$( '.menus-move-right' ).on( 'click', function ( e ) {
+			$( '#menu-management' ).on( 'click', '.menus-move-right', function ( e ) {
 				api.moveMenuItem( $( this ).parents( 'li.menu-item' ).find( 'a.item-edit' ), 'right' );
 				e.preventDefault();
 			});
+
 		},
 
 		/* This function takes all code from refreshAdvancedAccessibility() and executes it only on a single 

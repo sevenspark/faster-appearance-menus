@@ -20,5 +20,16 @@ function fam_swap_core_script(){
 		wp_deregister_script( 'nav-menu' );
 		wp_register_script( 'nav-menu', FAST_AM_URL . 'nav-menu.js' , array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-droppable', 'wp-lists', 'postbox' ), false , 'faster-0.1' );
 		wp_enqueue_script( 'nav-menu' );
+
+		
+		did_action( 'init' ) && wp_localize_script( 'nav-menu', 'navMenuL10n', array(
+			'noResultsFound' => _x('No results found.', 'search results'),
+			'warnDeleteMenu' => __( "You are about to permanently delete this menu. \n 'Cancel' to stop, 'OK' to delete." ),
+			'saveAlert' => __('The changes you made will be lost if you navigate away from this page.')
+		) );
+
+		if ( wp_is_mobile() )
+			wp_enqueue_script( 'jquery-touch-punch' );
+		
 	}
 }
