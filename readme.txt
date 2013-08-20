@@ -4,11 +4,15 @@ Donate link: http://bit.ly/DonateResponsiveSelect
 Tags: menus, appearance, fast, fix, slow
 Requires at least: 3.6
 Tested up to: 3.6
-Stable tag: 0.1
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 If your Appearance > Menus screen has become very laggy after upgrading to WordPress 3.6 and you have a lot of menu items, this should speed it up.  [Full details](http://sevenspark.com/wordpress/speeding-up-the-appearance-menus-screen-in-wordpress-3-6)
+
+Watch the video
+
+<a href="http://www.youtube.com/watch?v=P1wOPN5zJzY&HD=1"><img src="http://i.imgur.com/zPY0IFo.png"></a>
 
 
 
@@ -37,6 +41,9 @@ This solution is fairly rough.  Hopefully we can develop a robust solution that 
 1. Faster Menu Management
 
 == Changelog ==
+
+= 0.1.1 =
+* Updated script replacement strategy to preserve script dependencies
 
 = 0.1 =
 * Initial version
